@@ -1,0 +1,58 @@
+.example {
+    margin: 100vw !important;
+    padding: calc(277.778vw - 55.6667rem);
+}
+
+@media (min-width: 31.25em) {
+
+    .example {
+        margin: 31.25rem !important;
+    }
+}
+
+@media (min-width: 31.3125em) {
+
+    .example {
+        padding: 31.3125rem;
+    }
+}
+
+.example2 {
+    margin: calc(150vw - 22.5625rem);
+}
+
+.example3 {
+    margin: 0 calc(150vw - 22.5938rem);
+}
+
+.example4 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+@media (min-width: 22.75em) {
+
+    .example4 {
+        padding-top: calc(150vw - 22.625rem);
+        padding-bottom: calc(150vw - 22.625rem);
+    }
+}
+
+@media (min-width: 45.25em) {
+
+    .example4 {
+        padding-top: 45.25rem;
+        padding-bottom: 45.25rem;
+    }
+}
+
+.example5 {
+    font-size: calc(0.357vw + 0.6786rem);
+}
+
+@media (min-width: 90em) {
+
+    .example5 {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,20 @@
+.example {
+    margin: slope-calc(0 0, 500px 500px, clip) !important;
+    padding: slope-calc(1 321px, 501px 501px, clip);
+}
+
+.example2 {
+    margin: slope-calc(182px 362px, 722px 722px);
+}
+
+.example3 {
+    margin: 0 slope-calc(183px 363px, 723px 723px);
+}
+
+.example4 {
+    padding: slope-calc(184px 364px, 724px 724px, clip media-query) 0;
+}
+
+.example5 {
+    font-size: slope-calc(12px 320px, 16px 1440px, clip);
+}

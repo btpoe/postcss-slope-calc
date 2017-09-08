@@ -1,0 +1,10 @@
+{
+  "name": "postcss-slope-calc",
+  "version": "0.1.2",
+  "main": "index.js",
+  "dependencies": {
+    "css-list-helpers": "^1.0.1",
+    "parse-css-sides": "^2.0.0",
+    "postcss": "^6.0.10"
+  }
+}
