@@ -1,6 +1,6 @@
 # Slope Calc
 
-##Usage
+## Usage
 
 Example:
 ```css
