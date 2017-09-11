@@ -1,6 +1,6 @@
 {
   "name": "postcss-slope-calc",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": "index.js",
   "dependencies": {
     "css-list-helpers": "^1.0.1",
