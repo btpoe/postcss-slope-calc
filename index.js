@@ -4,30 +4,25 @@ const { splitBySpaces } = require('css-list-helpers');
 const joinSides = require('./lib/joinSides');
 const getStack = require('./lib/slopeCalc');
 const Tween = require('./lib/Tween');
+const QueryStack = require('./lib/QueryStack');
 const Unit = require('./lib/CSSUnit');
 
-module.exports = postcss.plugin('slope_calc', (opts) => (
+module.exports = postcss.plugin('slope_calc', (opts = {}) => (
     css => {
-        opts = opts || {};
-
+        Object.assign(QueryStack.options, opts);
         Object.assign(Tween.options, opts);
         Object.assign(Unit.options, opts);
 
         css.walkRules(rule => {
-            let queryStack = {};
+            const queryStack = new QueryStack(rule);
 
             rule.walkDecls(decl => {
                 function evaluateDecl({ prop, value }) {
                     let baseVal = false;
 
-                    getStack(value).forEach(({ value, minWidth }) => {
+                    getStack(value).forEach(({ value, minWidth, viewPortType }) => {
                         if (minWidth) {
-                            if (!queryStack[minWidth]) {
-                                queryStack[minWidth] = postcss.atRule({ name: 'media', params: `${opts.onlyScreen ? 'only screen and ' : ''}(min-width: ${minWidth})` });
-                                queryStack[minWidth].append(postcss.rule({ selector: rule.selector }));
-                            }
-                            const atRule = queryStack[minWidth];
-                            atRule.nodes[0].append(postcss.decl({ prop, value, important: decl.important }));
+                            queryStack.add(viewPortType, minWidth, postcss.decl({ prop, value, important: decl.important }));
                         } else {
                             baseVal = value;
                         }
@@ -75,10 +70,6 @@ module.exports = postcss.plugin('slope_calc', (opts) => (
                         }
                     }
                 }
-            });
-
-            Object.keys(queryStack).sort().reverse().forEach(key => {
-                rule.after(queryStack[key]);
             });
         });
     }

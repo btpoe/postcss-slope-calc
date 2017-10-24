@@ -1,38 +1,38 @@
-.example {
+.example-basic {
+    margin: calc(150vw - 22.5625rem);
+}
+
+.example-clip-important {
     margin: 100vw !important;
-    padding: calc(277.778vw - 55.6667rem);
+    padding: calc(277.7778vw - 55.6667rem);
 }
 
 @media (min-width: 31.25em) {
 
-    .example {
+    .example-clip-important {
         margin: 31.25rem !important;
     }
 }
 
 @media (min-width: 31.3125em) {
 
-    .example {
+    .example-clip-important {
         padding: 31.3125rem;
     }
 }
 
-.example2 {
-    margin: calc(150vw - 22.5625rem);
-}
-
-.example3 {
+.example-shorthand-basic {
     margin: 0 calc(150vw - 22.5938rem);
 }
 
-.example4 {
+.example-shorthand-flag-media-query {
     padding-left: 0;
     padding-right: 0;
 }
 
 @media (min-width: 22.75em) {
 
-    .example4 {
+    .example-shorthand-flag-media-query {
         padding-top: calc(150vw - 22.625rem);
         padding-bottom: calc(150vw - 22.625rem);
     }
@@ -40,19 +40,79 @@
 
 @media (min-width: 45.25em) {
 
-    .example4 {
+    .example-shorthand-flag-media-query {
         padding-top: 45.25rem;
         padding-bottom: 45.25rem;
     }
 }
 
-.example5 {
-    font-size: calc(0.357vw + 0.6786rem);
+.example-font-clip {
+    font-size: calc(0.3571vw + 0.6786rem);
 }
 
 @media (min-width: 90em) {
 
-    .example5 {
+    .example-font-clip {
         font-size: 1rem;
+    }
+}
+
+.example-vh {
+    font-size: calc(19.6429vh - 3.1786rem);
+}
+
+@media (min-height: 48em) {
+
+    .example-vh {
+        font-size: 6.25rem;
+    }
+}
+
+.example-vmax {
+    margin-top: calc(11.3636vmax - 1.0227rem);
+}
+
+@media (min-width: 64em), (min-height: 64em) {
+
+    .example-vmax {
+        margin-top: 6.25rem;
+    }
+}
+
+.example-vmin {
+    margin-top: calc(11.3636vmin - 1.0227rem);
+}
+
+@media (min-width: 64em) and (min-height: 64em) {
+
+    .example-vmin {
+        margin-top: 6.25rem;
+    }
+}
+
+.example-vw-and-vmin {
+    font-size: calc(0.5682vw + 0.6364rem);
+    padding: calc(0.4167vh + 0.6667rem);
+    margin-top: calc(7.1429vmin - 0.1786rem);
+}
+
+@media (min-width: 64em) {
+
+    .example-vw-and-vmin {
+        font-size: 1rem;
+    }
+}
+
+@media (min-height: 80em) {
+
+    .example-vw-and-vmin {
+        padding: 1rem;
+    }
+}
+
+@media (min-width: 90em) and (min-height: 90em) {
+
+    .example-vw-and-vmin {
+        margin-top: 6.25rem;
     }
 }

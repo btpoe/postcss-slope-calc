@@ -1,20 +1,38 @@
-.example {
+.example-basic {
+    margin: slope-calc(182px 362px, 722px 722px);
+}
+
+.example-clip-important {
     margin: slope-calc(0 0, 500px 500px, clip) !important;
     padding: slope-calc(1 321px, 501px 501px, clip);
 }
 
-.example2 {
-    margin: slope-calc(182px 362px, 722px 722px);
-}
-
-.example3 {
+.example-shorthand-basic {
     margin: 0 slope-calc(183px 363px, 723px 723px);
 }
 
-.example4 {
+.example-shorthand-flag-media-query {
     padding: slope-calc(184px 364px, 724px 724px, clip media-query) 0;
 }
 
-.example5 {
+.example-font-clip {
     font-size: slope-calc(12px 320px, 16px 1440px, clip);
+}
+
+.example-vh {
+    font-size: slope-calc(12px 320px, 100px 768px, clip vh);
+}
+
+.example-vmax {
+    margin-top: slope-calc(20px 320px, 100px 1024px, clip vmax);
+}
+
+.example-vmin {
+    margin-top: slope-calc(20px 320px, 100px 1024px, clip vmin);
+}
+
+.example-vw-and-vmin {
+    font-size: slope-calc(12px 320px, 16px 1024px, clip);
+    padding: slope-calc(12px 320px, 16px 1280px, clip vh);
+    margin-top: slope-calc(20px 320px, 100px 1440px, clip vmin);
 }
